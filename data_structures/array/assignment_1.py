@@ -20,9 +20,41 @@ Question 1.
 
 def find_min_max_in_array(*, array: list[int]) -> tuple[int, int]:
     """
+    
     Find the minimum and maximum values in an array.
 
     :param array: A array of integers.
 
     :return: A tuple containing the minimum and maximum values, with the minimum value first.
     """
+
+    #check if array is empty
+    if not array:
+     return (0, 0)
+    
+    #check if all elements are of type integer
+    for item in array:
+        if not isinstance(item, int):
+           raise ValueError("the item is not an integer")
+
+    #if array has only one element, return it as both min and max    
+    if len(array)==1:
+       return(array[0], array[0])
+    
+   #initialize min and max with first elements in the list 
+    maximum_number = array[0]
+    minimum_number = array[0]
+    
+    #iterate through the array starting from second element (sliced)
+    for num in array[1:]:
+       
+       #update minimum if current number is smaller
+       if num < minimum_number:
+           minimum_number= num
+
+       #update maximum if current number is larger or bigger       
+       if num > maximum_number:
+            maximum_number =num
+
+#return tuple with minimum first, then maximum
+    return (minimum_number, maximum_number)
