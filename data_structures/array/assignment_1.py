@@ -17,44 +17,42 @@ Question 1.
 - Do not use the in-built min and max functions.
 - Do not use sorted or array.sort() methods.
 '''
-
 def find_min_max_in_array(*, array: list[int]) -> tuple[int, int]:
     """
-    
     Find the minimum and maximum values in an array.
 
     :param array: A array of integers.
-
     :return: A tuple containing the minimum and maximum values, with the minimum value first.
     """
-
-    #check if array is empty
+    # Check if array is empty
     if not array:
-     return (0, 0)
+        return (0, 0)
     
-    #check if all elements are of type integer
+    # Check if array is a list, raise ValueError if not
+    if not isinstance(array, list):
+        raise ValueError("Array must be a list of integers")
+    
+    # Check if all elements are integers
     for item in array:
         if not isinstance(item, int):
-           raise ValueError("the item is not an integer")
-
-    #if array has only one element, return it as both min and max    
-    if len(array)==1:
-       return(array[0], array[0])
+            raise ValueError("Array must contain only integers")
     
-   #initialize min and max with first elements in the list 
-    maximum_number = array[0]
+    # If array has only one element, return it as both min and max
+    if len(array) == 1:
+        return (array[0], array[0])
+    
+    # Initialize min and max with first element
     minimum_number = array[0]
+    maximum_number = array[0]
     
-    #iterate through the array starting from second element (sliced)
+    # Iterate through array starting from second element
     for num in array[1:]:
-       
-       #update minimum if current number is smaller
-       if num < minimum_number:
-           minimum_number= num
-
-       #update maximum if current number is larger or bigger       
-       if num > maximum_number:
-            maximum_number =num
-
-#return tuple with minimum first, then maximum
+        # Update minimum if current number is smaller
+        if num < minimum_number:
+            minimum_number = num
+        # Update maximum if current number is larger
+        if num > maximum_number:
+            maximum_number = num
+    
+    # Return tuple with minimum first, then maximum
     return (minimum_number, maximum_number)
