@@ -18,8 +18,8 @@ Question 1.
 - Do not use sorted or array.sort() methods.
 '''
 
-ARRAY_INTEGER_VALIDATION_ERROR = 'Array must be integers only!'
-EMPTY_ARRAY_VALUE_ERROR = 'The array is empty.'
+
+from constants import ARRAY_INTEGER_VALIDATION_ERROR, EMPTY_ARRAY_VALUE_ERROR
 
 def find_min_max_in_array(*, array: list[int]) -> tuple[int, int]:
     """
