@@ -26,3 +26,24 @@ def find_min_max_in_array(*, array: list[int]) -> tuple[int, int]:
 
     :return: A tuple containing the minimum and maximum values, with the minimum value first.
     """
+
+
+'''
+Question 2
+Reverse an array (without using built-in reverse)
+Return a new array with the elements in reverse order.
+- If the array is empty, return an empty array.
+- If the array contains only one element, return the array as is.
+- If the array does not contain numbers or is not empty, raise a ValueError with the message "Array must contain only integers".
+- Do not use the in-built reversed function or array.reverse() method.
+- Comment every step in your code.
+- Leave whitespace where appropriate.
+'''
+def reverse_array(*, array: list[int]) -> list[int]:
+    """
+    Reverse an array.
+
+    :param array: A array of integers.
+
+    :return: A new array with the elements in reverse order.
+    """
