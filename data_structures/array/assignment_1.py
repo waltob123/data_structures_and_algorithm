@@ -27,7 +27,7 @@ def find_min_max_in_array(*, array: list[int]) -> tuple[int, int]:
     :return: A tuple containing the minimum and maximum values, with the minimum value first.
     """
 
-    # Check if the provided input is actually a list.
+    # First, validate that the input itself is a list.
     if not isinstance(array, list):
         raise ValueError("Array must contain only integers")
 
@@ -35,29 +35,26 @@ def find_min_max_in_array(*, array: list[int]) -> tuple[int, int]:
     if not array:
         return (0, 0)
     
-    # Set both the minimum and maximum values with the first element of the array.
-    # Before we do that, we must ensure the first element is an integer.
-    if not isinstance(array[0], int):
-        raise ValueError("Array must contain only integers")
-        
+    # Perform a validation to ensure all elements in the list are integers.
+    for item in array:
+        if not isinstance(item, int):
+            raise ValueError("Array must contain only integers")
+
+    # If validation is successful, proceed to find the min and max.
+    # Initialize with the first element, since we know the list is not empty.
     min_val = array[0]
     max_val = array[0]
 
-    # Now, iterate through the rest of the array, starting from the second element.
-    # thus: array[1:] to create a slice of the array from the second element to the end.
+    # Iterate from the second element to the end.
     for number in array[1:]:
         
-        # At each step, validate that the element is an integer If not, raise a ValueError as required.
-        if not isinstance(number, int):
-            raise ValueError("Array must contain only integers")
-
-        # Check if the current number is greater than our current maximum, if it is, we update our maximum value.
+        # Check if the current number is greater than our current maximum.
         if number > max_val:
             max_val = number
         
-        # Check if the current number is less than our current minimum, if it is, we update our minimum value.
+        # Check if the current number is less than our current minimum.
         elif number < min_val:
             min_val = number
 
-    # Return the final minimum and maximum values in a tuple after loop ends.
+    # After the loop has finished, return the final minimum and maximum values in a tuple.
     return (min_val, max_val)
