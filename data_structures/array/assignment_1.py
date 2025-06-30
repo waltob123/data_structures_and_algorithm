@@ -17,14 +17,12 @@ Question 1.
 - Do not use the in-built min and max functions.
 - Do not use sorted or array.sort() methods.
 '''
-
 def find_min_max_in_array(*, array: list[int]) -> tuple[int, int]:
-
     """
     Find the minimum and maximum values in a list of integers.
 
     Parameters:
-        integers (list[int]): The list of integers to process.
+        array (list[int]): The list of integers to process.
 
     Returns:
         tuple[int, int]: A tuple with the minimum value first, then the maximum.
@@ -36,48 +34,33 @@ def find_min_max_in_array(*, array: list[int]) -> tuple[int, int]:
     # Checks if the list is empty
     if not array:
         return (0, 0)
+    
+    #validate if array is a list and then raise vlaue error
+    if not isinstance(array, list):
+        raise ValueError("Array must contain only integers")
 
+
+    # Validate all elements are integers
+    for value in array:
+        if not isinstance(value, int):
+            raise ValueError("Array must contain only integers")
+        
     # Checks if the list has only one element
     if len(array) == 1:
         return (array[0], array[0])
 
-    # loops through each item in the list and raise an error and stops if any element is not an integer
-    for value in array:
-        if not isinstance(value, int):
-            raise ValueError("Array must contain only integers")
-
-    # sets min_val and max_val to the first element.(also helps in returning same if there is only one element)
+    # Initialize min and max
     min_val = array[0]
     max_val = array[0]
 
-    # Loops through the list starting from the second element
+    # Loop through remaining elements
     for i in range(1, len(array)):
         current = array[i]
-
-        # Update min if current is smaller
         if current < min_val:
             min_val = current
-
-        # Update max if current is larger
         if current > max_val:
             max_val = current
 
-    # Return result as a tuple
     return (min_val, max_val)
 
-
-# ---------------------------------------------
-# Main program start from here
-
-# Create a list of 60 integers from 1 to 60
-integerz = []
-
-for i in range(1, 61):
-    integerz.append(i)
-
-# Call the function using keyword argument
-result = find_min_max_in_array(array=integerz)
-
-# Print the result
-print("Minimum and Maximum values:", result)
 

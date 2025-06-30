@@ -2,7 +2,7 @@
 array.py
 
 # Byte-compiled / optimized / DLL files
-__pycache__/
+*__pycache__/
 *.py[cod]
 *$py.class
 
@@ -41,10 +41,10 @@ pip-delete-this-directory.txt
 
 # Unit test / coverage reports
 htmlcov/
-.tox/
-.nox/
-.coverage
-.coverage.*
+*.tox/
+*.nox/
+*.coverage
+*.coverage.*
 .cache
 nosetests.xml
 coverage.xml
