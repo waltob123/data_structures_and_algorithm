@@ -1,8 +1,8 @@
 import inspect
 import unittest
 
-# from data_structures.array.assignment_1 import find_min_max_in_array, reverse_array, sum_of_array
-from data_structures.array.array import find_min_max_in_array, reverse_array, sum_of_array
+from data_structures.array.assignment_1 import find_min_max_in_array, reverse_array, sum_of_array
+# from data_structures.array.array import find_min_max_in_array, reverse_array, sum_of_array
 
 
 class TestArray(unittest.TestCase):
