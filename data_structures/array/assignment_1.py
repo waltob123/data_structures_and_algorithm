@@ -58,3 +58,55 @@ def find_min_max_in_array(*, array: list[int]) -> tuple[int, int]:
 
     # After the loop has finished, return the final minimum and maximum values in a tuple.
     return (min_val, max_val)
+
+'''
+Question 2
+- Reverse an array (without using built-in reverse)
+- ...
+'''
+def reverse_array(*, array: list[int]) -> list[int]:
+    """
+    Reverse an array.
+
+    :param array: An array of integers.
+    :return: A new array with the elements in reverse order.
+    """
+    if not isinstance(array, list):
+        raise ValueError("Array must contain only integers")
+
+    if not array:
+        return []
+
+    for item in array:
+        if not isinstance(item, int):
+            raise ValueError("Array must contain only integers")
+
+    reversed_list = array[::-1]
+
+    return reversed_list
+
+
+"""
+Question 3
+- Calculate the sum of all elements in an array.
+- ...
+"""
+def sum_of_array(*, array: list[int]) -> int:
+    """
+    Sum the elements of an array.
+
+    :param array: An array of integers.
+    :return: The sum of the elements in the array.
+    """
+    if not isinstance(array, list):
+        raise ValueError("Array must contain only integers")
+
+    for item in array:
+        if not isinstance(item, int):
+            raise ValueError("Array must contain only integers")
+
+    total_sum = 0
+    for number in array:
+        total_sum += number
+
+    return total_sum
