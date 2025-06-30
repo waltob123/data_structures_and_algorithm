@@ -1,8 +1,8 @@
 import inspect
 import unittest
 
-from data_structures.array.assignment_1 import find_min_max_in_array, reverse_array
-# from data_structures.array.array import find_min_max_in_array, reverse_array
+# from data_structures.array.assignment_1 import find_min_max_in_array, reverse_array, sum_of_array
+from data_structures.array.array import find_min_max_in_array, reverse_array, sum_of_array
 
 
 class TestArray(unittest.TestCase):
@@ -101,16 +101,59 @@ class TestArray(unittest.TestCase):
             reverse_array(array=self.value)
             self.assertEqual(err.msg, "Array must contain only integers")
 
+    def test_sum_of_array_with_valid_array(self):
+        result = sum_of_array(array=self.array)
+        self.assertEqual(result, sum(self.array))
+
+    def test_sum_of_array_with_empty_array(self):
+        result = sum_of_array(array=self.empty_array)
+        self.assertEqual(result, 0)
+
+    def test_sum_of_array_with_single_element(self):
+        result = sum_of_array(array=self.single_element_array)
+        self.assertEqual(result, 42)
+
+    def test_sum_of_array_with_negative_numbers(self):
+        result = sum_of_array(array=self.negative_numbers_array)
+        self.assertEqual(result, -150)
+
+    def test_sum_of_array_with_string_array(self):
+        with self.assertRaises(ValueError) as err:
+            sum_of_array(array=self.string_array)
+            self.assertEqual(err.msg, "Array must contain only integers")
+
+    def test_sum_of_array_with_mixed_array(self):
+        with self.assertRaises(ValueError) as err:
+            sum_of_array(array=self.mixed_array)
+            self.assertEqual(err.msg, "Array must contain only integers")
+
+    def test_sum_of_array_with_float_array(self):
+        with self.assertRaises(ValueError) as err:
+            sum_of_array(array=self.float_array)
+            self.assertEqual(err.msg, "Array must contain only integers")
+
+    def test_sum_of_array_with_random_string(self):
+        with self.assertRaises(ValueError) as err:
+            sum_of_array(array=self.random_string)
+            self.assertEqual(err.msg, "Array must contain only integers")
+
+    def test_sum_of_array_with_value(self):
+        with self.assertRaises(ValueError) as err:
+            sum_of_array(array=self.value)
+            self.assertEqual(err.msg, "Array must contain only integers")
+
     def test_function_signature(self):
         # check if min and max, sorted or array.sort in-built functions are not used
         min_max_source_code = inspect.getsource(find_min_max_in_array)
         reverse_source_code = inspect.getsource(reverse_array)
+        sum_source_code = inspect.getsource(sum_of_array)
         self.assertNotIn("min(", min_max_source_code)
         self.assertNotIn("max(", min_max_source_code)
         self.assertNotIn("sorted(", min_max_source_code)
         self.assertNotIn("array.sort(", min_max_source_code)
         self.assertNotIn("reversed(", reverse_source_code)
         self.assertNotIn("array.reverse(", reverse_source_code)
+        self.assertNotIn("sum(", sum_source_code)
 
 
 if __name__ == "__main__":

@@ -47,3 +47,24 @@ def reverse_array(*, array: list[int]) -> list[int]:
 
     :return: A new array with the elements in reverse order.
     """
+
+
+"""
+Question 3
+- Calculate the sum of all elements in an array.
+- Return the sum.
+- If the array is empty, return 0.
+- If the array contains one element, return the element.
+- If the array does not contain numbers or is not empty, raise a ValueError with the message "Array must contain only integers".
+- Do not use the in-built sum function.
+- Comment every step in your code.
+- Leave whitespace where appropriate.
+"""
+def sum_of_array(*, array: list[int]) -> int:
+    """
+    Sum the elements of an array.
+
+    :param array: An array of integers.
+
+    :return: The sum of the elements in the array.
+    """
