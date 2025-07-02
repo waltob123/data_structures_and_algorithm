@@ -1,7 +1,7 @@
 import inspect
 import unittest
 
-from data_structures.array.assignment_1 import find_min_max_in_array
+from data_structures.array.assignment_1 import find_min_max_in_array # type: ignore
 
 class TestArray(unittest.TestCase):
     def setUp(self):
