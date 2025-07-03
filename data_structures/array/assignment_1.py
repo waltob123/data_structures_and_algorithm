@@ -26,6 +26,7 @@ def find_min_max_in_array(*, array: list[int]) -> tuple[int, int]:
 
     :return: A tuple containing the minimum and maximum values, with the minimum value first.
     """
+
   # Check if array is empty
     if not array:
         return (0, 0)
@@ -59,6 +60,7 @@ def find_min_max_in_array(*, array: list[int]) -> tuple[int, int]:
     # Return tuple with minimum first, then maximum
     return (minimum_number, maximum_number)
 
+
 '''
 Question 2
 Reverse an array (without using built-in reverse)
@@ -78,6 +80,7 @@ def reverse_array(*, array: list[int]) -> list[int]:
 
     :return: A new array with the elements in reverse order.
     """
+
  # Check if array is empty and this returns an empty list
     if not array:
         return []
@@ -105,6 +108,7 @@ def reverse_array(*, array: list[int]) -> list[int]:
     # Return the new reversed array
     return reversed_array
 
+
 """
 Question 3
 - Calculate the sum of all elements in an array.
@@ -124,6 +128,7 @@ def sum_of_array(*, array: list[int]) -> int:
 
     :return: The sum of the elements in the array.
     """
+
  # Check if array is empty and return 0
     if not array:
         return 0
@@ -150,3 +155,4 @@ def sum_of_array(*, array: list[int]) -> int:
     
     # Return the total sum
     return total_sum
+
