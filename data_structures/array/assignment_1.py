@@ -17,14 +17,16 @@ Question 1.
 - Do not use the in-built min and max functions.
 - Do not use sorted or array.sort() methods.
 '''
+
 def find_min_max_in_array(*, array: list[int]) -> tuple[int, int]:
     """
     Find the minimum and maximum values in an array.
 
     :param array: A array of integers.
+
     :return: A tuple containing the minimum and maximum values, with the minimum value first.
     """
-    # Check if array is empty
+  # Check if array is empty
     if not array:
         return (0, 0)
     
@@ -66,16 +68,17 @@ Return a new array with the elements in reverse order.
 - If the array does not contain numbers or is not empty, raise a ValueError with the message "Array must contain only integers".
 - Do not use the in-built reversed function or array.reverse() method.
 - Comment every step in your code.
-- Leave whitespace where appropriate.'''
-
+- Leave whitespace where appropriate.
+'''
 def reverse_array(*, array: list[int]) -> list[int]:
     """
     Reverse an array.
 
     :param array: A array of integers.
+
     :return: A new array with the elements in reverse order.
     """
-    # Check if array is empty and this returns an empty list
+ # Check if array is empty and this returns an empty list
     if not array:
         return []
     
@@ -114,12 +117,14 @@ Question 3
 - Leave whitespace where appropriate.
 """
 def sum_of_array(*, array: list[int]) -> int:
-    """    Calculate the sum of all elements in an array.
-
-    :param array: A array of integers.
-    :return: The sum of all elements in the array.
     """
-    # Check if array is empty and return 0
+    Sum the elements of an array.
+
+    :param array: An array of integers.
+
+    :return: The sum of the elements in the array.
+    """
+ # Check if array is empty and return 0
     if not array:
         return 0
     
