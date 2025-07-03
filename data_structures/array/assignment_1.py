@@ -27,6 +27,39 @@ def find_min_max_in_array(*, array: list[int]) -> tuple[int, int]:
     :return: A tuple containing the minimum and maximum values, with the minimum value first.
     """
 
+  # Check if array is empty
+    if not array:
+        return (0, 0)
+    
+    # Check if array is a list, raise ValueError if not
+    if not isinstance(array, list):
+        raise ValueError("Array must be a list of integers")
+    
+    # Check if all elements are integers
+    for item in array:
+        if not isinstance(item, int):
+            raise ValueError("Array must contain only integers")
+    
+    # If array has only one element, return it as both min and max
+    if len(array) == 1:
+        return (array[0], array[0])
+    
+    # Initialize min and max with first element
+    minimum_number = array[0]
+    maximum_number = array[0]
+    
+    # Iterate through array starting from second element
+    for num in array[1:]:
+        # Update minimum if current number is smaller
+        if num < minimum_number:
+            minimum_number = num
+        # Update maximum if current number is larger
+        if num > maximum_number:
+            maximum_number = num
+    
+    # Return tuple with minimum first, then maximum
+    return (minimum_number, maximum_number)
+
 
 '''
 Question 2
@@ -48,6 +81,33 @@ def reverse_array(*, array: list[int]) -> list[int]:
     :return: A new array with the elements in reverse order.
     """
 
+ # Check if array is empty and this returns an empty list
+    if not array:
+        return []
+    
+    # Check if array is a list, raise ValueError if not
+    if not isinstance(array, list):
+        raise ValueError("Array must contain only integers")
+    
+    # Check if all elements are integers
+    for item in array:
+        if not isinstance(item, int):
+            raise ValueError("Array must contain only integers")
+    
+    # If array has only one element, return a new copy of the array
+    if len(array) == 1:
+        return array.copy()
+    
+    # Initialize a new array with the same length as the input array
+    reversed_array = [0] * len(array)
+    
+    # Iterate through the input array and populate the new array in reverse order
+    for i in range(len(array)):
+        reversed_array[len(array) - 1 - i] = array[i]
+    
+    # Return the new reversed array
+    return reversed_array
+
 
 """
 Question 3
@@ -68,3 +128,31 @@ def sum_of_array(*, array: list[int]) -> int:
 
     :return: The sum of the elements in the array.
     """
+
+ # Check if array is empty and return 0
+    if not array:
+        return 0
+    
+    # Check if array is a list, raise ValueError if not
+    if not isinstance(array, list):
+        raise ValueError("Array must contain only integers")
+    
+    # Check if all elements are integers
+    for item in array:
+        if not isinstance(item, int):
+            raise ValueError("Array must contain only integers")
+    
+    # If array has only one element, return that element
+    if len(array) == 1:
+        return array[0]
+    
+    # Initialize sum variable
+    total_sum = 0
+    
+    # Iterate through the array and accumulate the sum
+    for num in array:
+        total_sum += num
+    
+    # Return the total sum
+    return total_sum
+
